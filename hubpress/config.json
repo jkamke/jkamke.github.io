@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "jkamke",
-    "repositoryName": "jkamke.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"jkamke","repositoryName":"jkamke.github.io","branch":"master"},"site":{"url":"https://jkamke.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"//jkamke.github.io/themes/Casper"}}
