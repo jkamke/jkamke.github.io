@@ -22,14 +22,24 @@ choose SDK for Node.js; Click continue; Name the app; Finish
 
 == Use services or APIs
 
+
+=== Provision Mongo
+
+
 Find MongoDB by Compose.
 
-=== Register with Compose if you don't have an account
+Register with Compose if you don't have an account.
+
+Create a db and provision accounts (or reuse an existing account).
+
+Enter the credentials.
+
+
+===  Provisioning IOTF 
 
 
 Scroll to the bottom of the Catalog and choose Iternet of Things (by IBM)
 
-===  Provisioning IOTF 
 Choose your App in the dropdown of the Add Service form
 Click Create on the IOTF
 
