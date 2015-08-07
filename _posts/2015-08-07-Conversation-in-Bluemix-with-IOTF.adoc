@@ -58,6 +58,15 @@ git push origin master
 
 === From the App page on the dashboard
 
+
+On the left hand Nav click Environment Variable
+
+* USER-DEFINED
+** FAKE_CASSANDRA :: true
+** MONGO_URL :: mongodb://u:p@url.domain.tld/db?params=value
+** Actual Url comes from Compose
+
+
 Click the Build and Deploy button in the Upper Right
 
 * On the Build Stage Click the Cog
