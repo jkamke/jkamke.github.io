@@ -2,7 +2,7 @@
     "meta": {
         "username": "demo-hubpress",
         "repositoryName": "demo-hubpress.github.io",
-        "branch": "master"
+        "branch": "gh-pages"
     },
     "theme": {
         "name": "Casper"
