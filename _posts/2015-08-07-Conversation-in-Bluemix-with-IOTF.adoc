@@ -22,6 +22,11 @@ choose SDK for Node.js; Click continue; Name the app; Finish
 
 == Use services or APIs
 
+Find MongoDB by Compose.
+
+=== Register with Compose if you don't have an account
+
+
 Scroll to the bottom of the Catalog and choose Iternet of Things (by IBM)
 
 ===  Provisioning IOTF 
