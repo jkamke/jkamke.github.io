@@ -1,3 +1,112 @@
 = Conversation in Bluemix with IOTF
 
 
+Most Headings begin an action you can take from the Bluemix dashboard.
+To deploy apps to the Bluemix Cloud:
+
+== Create App
+
+Cloud Foundry apps
+
+It will ask something like: What do you want to start with?
+
+choose SDK for Node.js; Click continue; Name the app; Finish
+
+
+== Use services or APIs
+
+Scroll to the bottom of the Catalog and choose Iternet of Things (by IBM)
+
+===  Provisioning IOTF 
+Choose your App in the dropdown of the Add Service form
+Click Create on the IOTF
+
+== Applications  (insert code here)
+
+click on your application
+
+click on ADD GIT in the upper Right.
+
+Leave the Populate Checkbox Checked; Click Continue
+
+Use new git url to:
+
+[source,bash]
+----
+git init
+git remote add origin https://hub.jazz.net/git/YOU/YOUR-APP <1>
+git pull origin master
+#merge  # <2>
+git push origin master
+----
+<1> Your git url.
+<2> As part of the merge activity you will need to either add or pwn the .cfignore
+
+[source,txt]
+./.gitignore
+----
+ launchConfigurations/
+.git/
+----
+
+=== From the App page on the dashboard
+
+Click the Build and Deploy button in the Upper Right
+
+* On the Build Stage Click the Cog
+** Configure Stage
+*** Under Environment Properties
+**** NPM_USERNAME ::Text Propety:: npm_name
+**** NPM_PASSWORD ::Secure Property:: ••••••••••••••••••••••••
+**** NPM_REPOSITORY ::Text Propety::  http://npm.scispike.com
+**** NPM_EMAIL ::Text Propety:: email_addr@domain.tld
+*** Under Jobs
+**** Change Builder Type:
+***** Shell Script
+** Save
+* Click Play (next to Cog on Build Stage)
+
+
+[source, bash]
+.Shell Script
+----
+#!/bin/bash -xe
+
+node --version
+
+npm --version
+
+whoami
+
+set +x
+
+base64_auth=$(node -e "console.log(new Buffer('${NPM_USERNAME}:${NPM_PASSWORD}').toString('base64'));")
+
+echo "_auth = $base64_auth" > ~/.npmrc
+
+set -x
+
+echo "email = ${NPM_EMAIL}" >> ~/.npmrc
+
+npm set registry $NPM_REPOSITORY
+
+npm set always-auth true
+
+npm set strict-ssl false
+
+ls -al ~/.npmrc
+
+npm whoami
+
+npm install
+
+npm run gen-src
+
+npm run gen-views
+
+npm run gen-red
+
+rm -rf views/bower_components
+
+rm -rf views/node_modules
+----
