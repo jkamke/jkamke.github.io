@@ -1,5 +1,10 @@
 = Conversation in Bluemix with IOTF
 
+Publishing an App to Bluemix is a simple way to put a node js application on the web.
+
+Combined with IOTF you can join your devices to the cloud in just a few steps.
+
+Outlined below are the basics for getting a connected app up quickly.
 
 Most Headings begin an action you can take from the Bluemix dashboard.
 To deploy apps to the Bluemix Cloud:
